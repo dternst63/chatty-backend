@@ -61,14 +61,15 @@ export class SignUp {
   }
 
   private signToken(data: IAuthDocument, userObjectId: ObjectId): string {
-    return JWT.sign({
-      userId: userObjectId,
-      uId: data.uId,
-      email: data.email,
-      username: data.username,
-      avatarColor: data.avatarColor
-    },
-    config.JWT_TOKEN!,
+    return JWT.sign(
+      {
+        userId: userObjectId,
+        uId: data.uId,
+        email: data.email,
+        username: data.username,
+        avatarColor: data.avatarColor
+      },
+      config.JWT_TOKEN!
     );
   }
 

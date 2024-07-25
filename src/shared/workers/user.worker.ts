@@ -6,7 +6,7 @@ import { userService } from '@service/db/user.service';
 const log: Logger = config.createLogger('authWorker');
 
 class UserWorker {
-  async addUserToDB(job: Job, done: DoneCallback): Promise<void>{
+  async addUserToDB(job: Job, done: DoneCallback): Promise<void> {
     try {
       const { value } = job.data;
       await userService.addUserData(value);
